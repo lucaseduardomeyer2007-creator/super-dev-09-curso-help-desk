@@ -1,5 +1,6 @@
 from sqlalchemy.orm import Session
 
+from api.app.core.security import hash_senha
 from api.app.models.usuario import Usuario
 from api.app.repositories.usuario_repository import UsuarioRepository
 from api.app.schemas.usuario_schema import UsuarioCriar
