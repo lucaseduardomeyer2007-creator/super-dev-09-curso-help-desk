@@ -7,9 +7,9 @@
 - controller
 - main.py
 
-# Entidade existe adicionar método
+# Entidade existe adicionar método DELETE
 - repository (opcional)
-- schema
+- schema (representação do que vem do front ou que retornamos para o front)
 - service
 - controller
 

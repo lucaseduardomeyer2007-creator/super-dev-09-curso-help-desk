@@ -23,8 +23,6 @@ class ConflitoError(ErroAplicacao):
     codigo = "conflito"
 
 
-
-
 def __corpo_erro(codigo: str, mensagem: str, detalhes: list) -> dict:
     return {"codigo": codigo, "mensagem": mensagem, "detalhes": detalhes}
 

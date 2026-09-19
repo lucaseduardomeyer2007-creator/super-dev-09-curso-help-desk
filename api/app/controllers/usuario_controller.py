@@ -1,5 +1,4 @@
-from fastapi import APIRouter
-
+from fastapi import APIRouter, Depends
 
 from app.dependencies.database import DbSession
 from app.schemas.usuario_schema import UsuarioCriar, UsuarioEditar, UsuarioListar
@@ -14,15 +13,15 @@ router = APIRouter(prefix="/usuarios", tags=["Usuários"])
     summary="Cadastrar usuário",
     response_model=UsuarioListar
 )
-def criar(dado: UsuarioCriar, db: DbSession):
+def criar(dado: UsuarioCriar, db:DbSession):
     return UsuarioService(db).criar(dado)
 
 
 @router.get(
-"",
-summary="Listar usuários",
-response_model=list[UsuarioListar],)
-
+    "",
+    summary="Listar usuários",
+    response_model=list[UsuarioListar],
+)
 def listar(db: DbSession):
     return UsuarioService(db).listar()
 
@@ -34,7 +33,7 @@ def editar(id: int, dado: UsuarioEditar, db: DbSession):
 
 @router.get(
     "/{id}",
-    summary="Consultar usuário filrando por id",
+    summary="Consultar usuário filtrando por id",
     response_model=UsuarioListar
 )
 def consultar_por_id(id: int, db: DbSession):
@@ -43,7 +42,7 @@ def consultar_por_id(id: int, db: DbSession):
 
 @router.delete(
     "/{id}",
-    summary="Apagar usuário filrando por id",
+    summary="Apagar usuário filtrando por id",
     response_model=UsuarioListar
 )
 def apagar(id: int, db: DbSession):
