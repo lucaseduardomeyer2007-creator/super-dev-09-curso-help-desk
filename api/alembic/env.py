@@ -11,7 +11,7 @@ from alembic import context
 # access to the values within the .ini file in use.
 config = context.config
 
-#Definir como o alembic se conectará no banco de dados
+# Definir como o alembic se conectará no banco de dados 
 config.set_main_option("sqlalchemy.url", settings.database_url)
 
 
@@ -73,7 +73,6 @@ def run_migrations_online() -> None:
     with connectable.connect() as connection:
         context.configure(
             connection=connection, target_metadata=target_metadata, compare_type=True,
-
         )
 
         with context.begin_transaction():
