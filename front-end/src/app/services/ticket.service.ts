@@ -10,7 +10,7 @@ export class TicketService {
 
 // URL do back-end por enquanto está fixo, depois
 // utilizaremos environment para ser dinâmico
-    private baseUrl = `http://localhost:8000/tickets`
+    private baseUrl = `http://localhost:8001/tickets`
 
 
     // função que será responsável por comunicar com o back
