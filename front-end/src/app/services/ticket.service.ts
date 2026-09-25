@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TicketResposta } from '../models/tickets.model';
+import { TicketCadastro, TicketResposta } from '../models/tickets.model';
 
 @Service()
 export class TicketService {
@@ -19,4 +19,12 @@ export class TicketService {
         // faz a requisição  para /tickets no back-end
         return this.http.get    <TicketResposta[]>(this.baseUrl)
     }
+
+    cadastrar(ticket: TicketCadastro): Observable<TicketResposta> {
+    return this.http.post<TicketResposta>(this.baseUrl, ticket);
 }
+
+
+
+}
+

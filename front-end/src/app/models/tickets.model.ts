@@ -13,3 +13,11 @@ export interface TicketResposta{
     solicitanteId: number;
     atendenteId: number;
 }
+
+
+export interface TicketCadastro{
+    descricao: string;
+    idUsuario: number | null;
+    setor: string;
+    titulo: string;
+}

@@ -192,3 +192,38 @@ button:nth-child(3):hover {
     text-decoration: underline;
     color:rgb(39, 203, 33);
 }
+
+.botao-acao-criar {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-bottom: 16px;
+}
+
+.botao-acao-criar button {
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 6px;
+
+  background: #6d28d9;
+  color: #ffffff;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.botao-acao-criar button:hover {
+  background: #7c3aed;
+  transform: translateY(-1px);
+}
+
+.botao-acao-criar button:active {
+  transform: translateY(0);
+}
