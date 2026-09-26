@@ -21,3 +21,7 @@ export interface TicketCadastro{
     setor: string;
     titulo: string;
 }
+
+export interface TicketAssociar {
+    idUsuario: number | null;
+}

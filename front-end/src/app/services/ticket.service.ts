@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TicketCadastro, TicketResposta } from '../models/tickets.model';
+import { TicketAssociar, TicketCadastro, TicketResposta } from '../models/tickets.model';
 
 @Service()
 export class TicketService {
@@ -24,7 +24,9 @@ export class TicketService {
     return this.http.post<TicketResposta>(this.baseUrl, ticket);
 }
 
-
+    associar(id: number, ticket: TicketAssociar): Observable<TicketResposta> {
+        return this.http.post<TicketResposta>(`${this.baseUrl}/${id}/associar`, ticket)
+    }
 
 }
 

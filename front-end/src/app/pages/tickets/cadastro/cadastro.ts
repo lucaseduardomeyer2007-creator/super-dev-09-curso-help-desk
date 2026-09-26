@@ -2,12 +2,12 @@ import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { TicketCadastro } from '../../../models/tickets.model';
 import { TicketService } from '../../../services/ticket.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { UsuarioService } from '../../../services/usuario.service';
 import { UsuarioResposta } from '../../../models/usuarios.model';
 
 @Component({
-  imports: [FormsModule],
+  imports: [FormsModule, RouterLink],
   selector: 'app-cadastro',
   styleUrl: './cadastro.scss',
   templateUrl: './cadastro.html',
