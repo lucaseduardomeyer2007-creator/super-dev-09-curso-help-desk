@@ -195,6 +195,20 @@
     background: #b91c1c;
 }
 
+.modal-acoes ::ng-deep button.perigo-contorno {
+    background: transparent;
+    color: #f87171;
+
+    border: 1px solid #991b1b;
+}
+
+.modal-acoes ::ng-deep button.perigo-contorno:hover {
+    background: rgba(153, 27, 27, 0.15);
+
+    border-color: #b91c1c;
+    color: #ffffff;
+}
+
 .modal-acoes ::ng-deep button.sucesso {
     background: #15803d;
 }

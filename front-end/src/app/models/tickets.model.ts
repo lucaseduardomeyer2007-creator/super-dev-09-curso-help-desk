@@ -22,6 +22,12 @@ export interface TicketCadastro{
     titulo: string;
 }
 
+
 export interface TicketAssociar {
     idUsuario: number | null;
+}
+
+export interface TicketDefinirPrioridade {
+    idUsuario: number | null;
+    prioridade: string | null;
 }

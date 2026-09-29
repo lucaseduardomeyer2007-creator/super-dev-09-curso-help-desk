@@ -227,3 +227,70 @@ button:nth-child(3):hover {
 .botao-acao-criar button:active {
   transform: translateY(0);
 }
+
+/* Modal — Associar Ticket */
+
+.form-associar {
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.form-associar label {
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #c4b5fd;
+}
+
+.form-associar select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    font-size: 14px;
+
+    background: #21172f;
+    color: #e9e5f5;
+
+    border: 1px solid #3b2a55;
+    border-radius: 6px;
+
+    outline: none;
+
+    cursor: pointer;
+    appearance: none;
+
+    padding-right: 38px;
+
+    background-image: linear-gradient(45deg, transparent 50%, #c4b5fd 50%),
+        linear-gradient(135deg, #c4b5fd 50%, transparent 50%);
+    background-position:
+        calc(100% - 20px) calc(50% + 2px),
+        calc(100% - 15px) calc(50% + 2px);
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+
+    transition:
+        border-color 0.2s ease,
+        background-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.form-associar select:hover {
+    border-color: #4c3670;
+}
+
+.form-associar select:focus {
+    background-color: #251b36;
+
+    border-color: #7c3aed;
+
+    box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.25);
+}
+
+.form-associar select option {
+    background: #181126;
+    color: #e9e5f5;
+}

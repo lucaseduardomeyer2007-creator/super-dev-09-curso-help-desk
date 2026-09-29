@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Service } from '@angular/core';
 import { Observable } from 'rxjs';
-import { TicketAssociar, TicketCadastro, TicketResposta } from '../models/tickets.model';
+import { TicketAssociar, TicketCadastro, TicketDefinirPrioridade, TicketResposta } from '../models/tickets.model';
 
 @Service()
 export class TicketService {
@@ -28,5 +28,8 @@ export class TicketService {
         return this.http.post<TicketResposta>(`${this.baseUrl}/${id}/associar`, ticket)
     }
 
+    definirPrioridade(id: number, dado: TicketDefinirPrioridade) : Observable<TicketResposta> {
+        return this.http.post<TicketResposta>(`${this.baseUrl}/${id}/definir-prioridade`, dado);
+    }
 }
 

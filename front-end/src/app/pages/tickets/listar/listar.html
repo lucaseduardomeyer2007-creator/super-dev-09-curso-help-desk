@@ -17,26 +17,25 @@
     </thead>
     <tbody>
         @for(ticket of tickets(); track ticket.id){
-            <tr>
-                <td class="link">{{ticket.numeroProtocolo}}</td>
-                <td>TODO</td>
-                <td>{{ticket.titulo}}</td>
-                <td>{{ticket.prioridade}}</td>
-                <td>{{ticket.status}}</td>
-                <td>
-                    @if(ticket.status === "ABERTO"){
-                    <button (click)="abrirModalAssociar(ticket.id)">Associar</button>
-                    }
-                    @else if(ticket.status === "EM_ANALISE"){
-                        <button>Definir Prioridade</button>
-                        <button>Resolver</button>
-                        <button>Cancelar</button>
-                    }   
-                    @else {
-                        <span class="sem-acoes">Nenhyma ação disponível</span>
-                    }
-                </td>
-            </tr>
+        <tr>
+            <td class="link">{{ticket.numeroProtocolo}}</td>
+            <td>TODO</td>
+            <td>{{ticket.titulo}}</td>
+            <td>{{ticket.prioridade}}</td>
+            <td>{{ticket.status}}</td>
+            <td>
+                @if(ticket.status === "ABERTO"){
+                <button (click)="abrirModalAssociar(ticket.id)">Associar</button>
+                }
+                @else if(ticket.status === "EM_ANALISE"){
+                <button>Definir Prioridade</button>
+                <button>Resolver</button>
+                <button>Cancelar</button>
+                } @else {
+                <span class="sem-acoes">Nenhuma ação disponível</span>
+                }
+            </td>
+        </tr>
         }
     </tbody>
 </table>
@@ -45,23 +44,22 @@
     titulo="Associar Ticket"
     [aberto]="modalAssociarAberta()"
     (fechar)="modalAssociarAberta.set(false)">
-    
 
-    <div>
+    <div class="form-associar">
         <div>
-        <label for="campo-usuario">Usuário</label>
-        <select id="campo-usuario" [(ngModel)]="ticketAssociar.idUsuario">
-            @for(usuario of usuarios(); track usuario.id){
-                @if(usuario.papel =="ATENDENTE"){
-                    <option [value]="usuario.id">{{usuario.nome}}</option>
+            <label for="campo-usuario">Usuário</label>
+            <select id="campo-usuario" [(ngModel)]="ticketAssociar.idUsuario">
+                @for(usuario of usuarios(); track usuario.id){
+                    @if(usuario.papel == "ATENDENTE"){
+                        <option [value]="usuario.id">{{usuario.nome}}</option>
+                    }
                 }
-            }
-        </select>
+            </select>
         </div>
-        <!--botões (rodapé da modal)-->
-        <button modal-acoes class="secundario" 
-        (click)="modalAssociarAberta.set(false)">Cancelar</button>
-        <button modal-acoes (click)="associar()">Associar</button>
     </div>
-</app-modal>
 
+    <!-- botões (rodapé da modal) -->
+    <button modal-acoes class="perigo-contorno"
+        (click)="modalAssociarAberta.set(false)">Cancelar</button>
+    <button modal-acoes class="sucesso" (click)="associar()">Associar</button>
+</app-modal>
